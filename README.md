@@ -6,5 +6,4 @@
 
 ### css_demo
 
-1. RippleInk
-
+- RippleInk(点击波纹效果)。
