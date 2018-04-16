@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RippleInk</title>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<style type="text/css">
+		body{
+			position: relative;
+		}
+		@keyframes largen {
+			from {
+				transform:scale(0,0);
+				opacity: 1;
+			}
+			to {
+				transform:scale(200px,200px);
+				opacity: 0;
+			}
+		}
+		.circle {
+			height: 200px;
+			width: 200px;
+			border-radius: 50%;
+			background-color: #f1f1f1;
+			animation-name: largen;
+			animation-duration: 0.5s;
+			animation-fill-mode:forwards;
+		}
+	</style>
+</head>
+<body>
+</body>
+</html>
+<script type="text/javascript">
+	$(document).on("click",function(e){
+		$("body").append('<div class="circle" style="position:absolute;left:'+(e.offsetX-100)+'px;top:'+(e.offsetY-100)+'px"></div>');
+		window.setTimeout(function(){
+			$(".circle").remove();
+		},500)
+	})
+</script>
