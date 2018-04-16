@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destructuring</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	{
+		console.group("first");
+		let [foo, [[bar], baz]] = [1, [[2], 3]];
+		console.log(foo);
+		console.log(bar);
+		console.log(baz);
+		console.groupEnd();
+	}
+	{
+		console.group("second");
+		let [head, ...tail] = [1, 2, 3, 4];
+		console.log(head);
+		console.log(tail);
+		console.groupEnd();
+	}
+	{
+		console.group("third");
+		let [x, y, ...z] = ['a'];
+		console.log(x);
+		console.log(y);	// 如果解构不成功，变量的值就等于undefined。
+		console.log(z);
+		console.groupEnd();
+	}
+	{
+		console.group("fourth");
+		let [...foo]=[];
+		console.log(foo);
+		console.groupEnd();
+	}
+</script>

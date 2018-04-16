@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generator</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	function* fibs() {
+		let a = 0;
+		let b = 1;
+		let bool=true;
+		if (bool) {
+			yield a;
+			[a, b] = [b, a + b];
+		}else {
+			return a;
+		}
+	}
+	var fibs=fibs();
+	console.log(fibs.next());
+</script>
