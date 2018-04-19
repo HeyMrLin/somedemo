@@ -8,14 +8,47 @@
 </body>
 </html>
 <script type="text/javascript">
-	function myPromise(){
-		return new Promise((resolve,reject)=>{
-			setTimeout(function(){
-				resolve("成功了!");
-			},1000);
+	{
+		function myPromise(){
+			return new Promise((resolve,reject)=>{
+				setTimeout(function(){
+					resolve("成功了!");
+				},5000);
+			});
+		}
+		myPromise().then(function(msg){
+			console.group();
+			console.log(msg);
+			console.groupEnd();
 		});
+		
 	}
-	myPromise().then(function(msg){
-		console.log(msg);
-	});
+	{
+		
+		function myPromise(){
+			return new Promise((resolve,reject)=>{
+				setTimeout(function(){
+					resolve("成功了!");
+				},5000);
+			});
+		}
+		function youPromise(){
+			return new Promise((resolve,reject)=>{
+				setTimeout(function(){
+					resolve("再次成功了!");
+				},2*5000);
+			})
+		}
+		myPromise().then(function(msg){
+			console.group();
+			console.log(msg);
+			if(msg==="成功了!"){
+				youPromise().then(function(youmsg){
+					console.log(youmsg);
+					console.groupEnd();
+				});
+			}
+		});
+		
+	}
 </script>
