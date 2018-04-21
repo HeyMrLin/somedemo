@@ -11,7 +11,7 @@
 	{
 		function myPromise(){
 			return new Promise((resolve,reject)=>{
-				setTimeout(resolve,5000,'成功了!'); //setTimeout的点三个及以上的参数可以作为resolve的参数传入.
+				setTimeout(resolve,5000,'成功了!'); //setTimeout的第三个及以上的参数可以作为resolve的参数传入.
 			});
 		}
 		myPromise().then(function(msg){
