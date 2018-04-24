@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>clickEvent</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#top,#bottom {
+			height: 200px;
+			border: 1px solid #000;
+			overflow: hidden;
+		}
+		li {
+			border: 1px solid #aaa;
+			list-style: none;
+			height: 50px;
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+<div id="top">
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+<br>
+<div id="bottom">
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	document.onkeydown=function (e) {
+		console.log(e);
+	}
+	document.addEventListener("click", function(e){
+		console.log(e);
+	})
+
+	function clickEvent(id){
+		var node = document.getElementById(id);
+		node.onclick=function(){
+			
+		}
+	}
+</script>
