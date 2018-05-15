@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onbeforeunload</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	var timeStart=new Date();
+	console.log(timeStart);
+	window.onbeforeunload = function () {
+		return function (){
+			alert(new Date());
+		}
+	}
+</script>

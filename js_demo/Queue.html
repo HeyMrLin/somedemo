@@ -96,9 +96,9 @@
 		var eliminated = "";
 		while (queue.size()>1) {
 			for (var i = 0; i < num; i++) {
-				queue.enqueue(queue.dequeue());
+				queue.enqueue(queue.dequeue()); //循环队列
 			}
-			eliminated = queue.dequeue();
+			eliminated = queue.dequeue(); // 移除新队列中排第一为的
 			console.log(eliminated + "在击鼓传花游戏中被淘汰。");
 		}
 
